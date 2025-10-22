@@ -42,6 +42,7 @@ curl -sS \
   ],
   "telemetry": { "time_ms": 134.2, "portion_source": "heuristic", "depth_coverage_pct": 0.0 }
 }
+```
 
 **###2. Coach Photo API**
 
@@ -55,7 +56,7 @@ curl -sS \
 curl -sS \
   -F "file=@data/greeksalad.jpeg;type=image/jpeg" \
   http://localhost:8000/api/coach/photo | jq
-
+```
 ###Sample Response
 ```json
 {
@@ -75,11 +76,14 @@ curl -sS \
   "remainingDaily": { "calories": 1650, "protein": 104, "carbs": 190, "fat": 51, "fiber": 22 },
   "coachReply": "Nice balanced meal!"
 }
+```
 
 ###Bad file (should 415)
+```bash
 curl -sS \
   -F "file=@README.md;type=text/plain" \
   http://localhost:8000/api/coach/photo | jq
+```
 
   ###Sample Response
   ```json
@@ -99,24 +103,26 @@ curl -sS \
     }
   ]
 }
+```
 **##Setup & Run**
 
 **###1. Clone and enter**
 ```bash
 git clone https://github.com/<your-username>/food-coach.git
 cd food-coach
-
+```
 **###2. Environment setup**
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
+```
 
 **###3. Launch API**
 ```bash
 python -m uvicorn app.main:app --reload
-
+```
 Then visit Swagger UI **👉 http://127.0.0.1:8000/docs**
+
 
 
