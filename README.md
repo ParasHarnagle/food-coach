@@ -33,7 +33,7 @@ It has two key endpoints:
 curl -sS \
   -F "file=@data/greeksalad.jpeg;type=image/jpeg" \
   http://localhost:8000/api/vision/upload | jq
-
+```
   ### Sample Response
   ```json
   {
@@ -118,4 +118,5 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --reload
 
 Then visit Swagger UI **👉 http://127.0.0.1:8000/docs**
+
 
